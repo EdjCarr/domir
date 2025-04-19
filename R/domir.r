@@ -605,7 +605,7 @@ domir.formula_list <- function(
         )
       class(fml_lst) <- c("formula_list", "list")
       # submit formula_list to '.fct'
-      (.fct, append(list(fml_lst), args_2_fct))
+      do.call(parse(.fct), append(list(fml_lst), args_2_fct))
     }
   # define arguments to `dominance_scalar` ----
   args_list <-
