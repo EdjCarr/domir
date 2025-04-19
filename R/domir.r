@@ -732,7 +732,7 @@ function_checker <- function(.obj, .fct, ...) {
   # does '.fct' work?
   test_model <-
     tryCatch(
-      do.call(eval(parse(.fct), append(obj_submit, list(...))),
+      do.call(eval(parse(.fct), append(obj_submit, list(...)))),
       error = function(err) {
         stop("'.fct' produced an error when applied to '.obj'.\n",
              "The error was:\n", err,
