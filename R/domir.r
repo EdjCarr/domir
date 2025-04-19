@@ -605,7 +605,7 @@ domir.formula_list <- function(
         )
       class(fml_lst) <- c("formula_list", "list")
       # submit formula_list to '.fct'
-      do.call(.fct, append(list(fml_lst), args_2_fct))
+      (.fct, append(list(fml_lst), args_2_fct))
     }
   # define arguments to `dominance_scalar` ----
   args_list <-
@@ -732,7 +732,7 @@ function_checker <- function(.obj, .fct, ...) {
   # does '.fct' work?
   test_model <-
     tryCatch(
-      do.call(eval(.fct), append(obj_submit, list(...))),
+      do.call(eval(parse(.fct)), append(obj_submit, list(...))),
       error = function(err) {
         stop("'.fct' produced an error when applied to '.obj'.\n",
              "The error was:\n", err,
