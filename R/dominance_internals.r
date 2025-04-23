@@ -65,7 +65,7 @@ dominance_scalar <-
       value_vector <-
         vapply(1:(nrow(subset_matrix) - 1),
                function(subset) obtain_value(subset, pg_bar),
-               FUN.VALUE = c(value = 0),
+               FUN.VALUE = c(0),
                USE.NAMES = FALSE
                )
     }
