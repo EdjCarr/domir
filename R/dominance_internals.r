@@ -65,7 +65,8 @@ dominance_scalar <-
       value_vector <-
         vapply(1:(nrow(subset_matrix) - 1),
                function(subset) obtain_value(subset, pg_bar),
-               simplify = TRUE, USE.NAMES = FALSE)
+               simplify = TRUE, USE.NAMES = FALSE, FUN.VALUE = c(value = 0)
+               )
     }
     # append value for subset of all names selected
     value_vector <- append(value_vector, value_w_all_names)
